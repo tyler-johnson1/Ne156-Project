@@ -1,0 +1,63 @@
+Single Plutonium Tray
+c
+c UNIVERSE 2, fuel pin
+1   1   -19.86  -1 -10 20           		               u = 2 imp:n=1  $ Pu
+4   4   -1.03    1 -10 20            			       u = 2 imp:n=1  $ Epoxy
+5   4   -1.03      -20 30                                      u = 2 imp:n=1  $ Epoxy Bottom
+c UNIVERSE 1, Array
+6   0           -5 6 -7 8 -10 30  lat = 1   fill=2                   u = 1 imp:n=1  $Lattice
+c UNIVERSE 0, GLOVE BOX
+7   0            -11 12 -13 14 -60 30                       fill= 1 imp:n=1 $bundle 1
+8   4	  -1.03     -41 30 -40						  imp:n=1 $Solid Waste  
+9   2	  -1.      -31  -24 23							 imp:n=1  $Arm1
+10  2	  -1.       -32 -24 23							 imp:n=1  $Arm2
+11  3	  -1.78e-3	  (#7 #8 #9 #10) -21 22 23 -24 -50 30	imp:n=1  $Vaccum Box
+99  0			#7 #8 #9 #10 #11						 imp:n=0  $External
+c
+
+c    Rod dimensions
+1    cz     0.5   $ pellet radius
+c    Basic lattice cell
+5   px     2.5
+6   px    -2.5
+7   py     2.5
+8   py    -2.5
+c    Full bundle dimensions
+11  px     -8
+12  px    -158
+13  py     15
+14  py     0
+c	Glove Box dimensions
+21  px	-8
+22  px      -162
+23  py	0
+24  py	90
+c	Arm dimensions
+31  c/y	-47 16 10
+32  c/y     -93 16 10
+c	Solid Waste
+41  c/z	-136 64 25
+c    Axial limits            
+10  pz   2.923	$First Sample Layer
+20  pz   1
+30  pz   0		$Baseline
+40  pz   25		$Waste
+50  pz   50		$Box Height
+60  pz   5.846	$Second Sample Layer
+c
+
+c    Plutonium
+m1    94239 1
+c    Water
+m2	1001	2
+	8016	1
+c	Argon
+m3	18040 1
+c    Polyethelene
+m4     1001  2
+       6012  1
+c --------------------------
+c
+kcode   1000  1.00  10  100
+ksrc    -95.33  5. 1.25
+print
